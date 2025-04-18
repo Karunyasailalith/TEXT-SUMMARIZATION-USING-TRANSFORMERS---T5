@@ -1,0 +1,477 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('../background.jpg'); /* 70% white base */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+
+/* Container */
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card */
+.card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(26, 35, 126, 0.1); /* soft blue shadow */
+  padding: 40px 30px;
+  max-width: 420px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+/* Heading */
+.card h2 {
+  color: #1a237e; /* rich blue */
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Primary Button */
+.btn {
+  background-color: #1a237e; /* 20% blue */
+  color: #ffffff;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0d1b5c;
+}
+
+/* Outline Button (Gold) */
+.btn-outline {
+  background-color: transparent;
+  color: #fbc02d; /* 10% gold */
+  border: 2px solid #fbc02d;
+}
+
+.btn-outline:hover {
+  background-color: #fbc02d;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .card {
+    padding: 30px 20px;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .button-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+/* Reuse previous global styles: body, container, .card, .btn */
+
+/* Login-specific styling */
+.login-card {
+  max-width: 420px;
+  width: 100%;
+  padding: 40px 30px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 24px rgba(26, 35, 126, 0.1);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form label {
+  font-weight: 500;
+  color: #1a237e;
+  text-align: left;
+}
+
+.form input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.form input:focus {
+  border-color: #1a237e;
+  outline: none;
+  box-shadow: 0 0 5px rgba(26, 35, 126, 0.2);
+}
+
+.signup-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #444;
+}
+
+.signup-link .gold-link {
+  color: #fbc02d;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-link .gold-link:hover {
+  text-decoration: underline;
+}
+
+/* Mobile-first responsive tweaks */
+@media (max-width: 480px) {
+  .form input {
+    font-size: 14px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+/* Signup card can share the same base styles as login */
+.signup-card {
+  max-width: 420px;
+  width: 100%;
+  padding: 40px 30px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 24px rgba(26, 35, 126, 0.1);
+}
+
+/* Reuse existing .form, input, btn, and label styles */
+
+/* Login link below the form */
+.login-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #444;
+}
+
+.login-link .gold-link {
+  color: #fbc02d;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link .gold-link:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+/* === Dashboard Layout === */
+.dashboard-container {
+  padding: 40px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #1a237e;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-title {
+  font-size: 24px;
+}
+
+.dashboard-main {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* === Left and Right Columns === */
+.dashboard-left,
+.dashboard-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.dashboard-card {
+  background-color: #ffffff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(26, 35, 126, 0.08);
+}
+
+/* === Summarization === */
+.dashboard-summarization-card .card-title {
+  margin-bottom: 20px;
+}
+
+.summarization-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.summarization-textarea,
+.summarization-input,
+.summarization-file-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.summarization-label {
+  font-weight: 500;
+}
+
+.summarization-submit-btn {
+  background-color: #1a237e;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.summarization-submit-btn:hover {
+  background-color: #283593;
+}
+
+/* === History === */
+.dashboard-history-card .card-title {
+  margin-bottom: 15px;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+}
+
+.history-item {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-left: 5px solid #fbc02d;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* === Logout Button === */
+.dashboard-logout-btn {
+  padding: 8px 16px;
+  border: 1px solid #1a237e;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #1a237e;
+  background-color: transparent;
+  transition: 0.3s ease;
+}
+
+.dashboard-logout-btn:hover {
+  background-color: #1a237e;
+  color: white;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .dashboard-main {
+    flex-direction: column;
+  }
+}
+/* NEW: Dashboard container becomes full height */
+.dashboard-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* NEW: make main area take remaining space and enable flex */
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  gap: 30px;
+  overflow: hidden;
+}
+
+/* Sticky left column */
+.dashboard-left {
+  flex: 0 0 45%;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: fit-content;
+}
+
+/* Scrollable right column */
+.dashboard-right {
+  flex: 1;
+  overflow-y: auto;
+  max-height: calc(100vh - 120px); /* Adjust based on header height */
+  padding-right: 8px;
+}
+
+/* Optional: hide scrollbar on Chrome */
+.dashboard-right::-webkit-scrollbar {
+  width: 6px;
+}
+.dashboard-right::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+
+/* Mobile Responsive: Stack layout */
+@media (max-width: 768px) {
+  .dashboard-main {
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .dashboard-left,
+  .dashboard-right {
+    position: static;
+    max-height: unset;
+    overflow: visible;
+    flex: 1;
+  }
+}
+
+
+
+
+
+
+
+
+/* === Summary Result Page === */
+.summary-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #1a237e;
+}
+
+.summary-title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.summary-columns {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.summary-left,
+.summary-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.summary-card {
+  background-color: #fff;
+  padding: 25px 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(26, 35, 126, 0.08);
+}
+
+.section-heading {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #1a237e;
+}
+
+.text-block,
+.summary-block {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.scrollable-box {
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 5px solid #fbc02d;
+}
+
+/* Optional scrollbar styling */
+.scrollable-box::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollable-box::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+
+.summary-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .summary-columns {
+    flex-direction: column;
+  }
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("../stati.png"); /* Path for direct HTML usage */
+  background-size: 100% 100%;   /* Stretches to fit width and height */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}

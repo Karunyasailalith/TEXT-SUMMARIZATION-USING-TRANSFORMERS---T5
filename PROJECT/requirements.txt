@@ -1,0 +1,9 @@
+Flask
+flask-pymongo
+nltk
+pymupdf
+transformers
+werkzeug
+torch
+torchvision
+torchaudio

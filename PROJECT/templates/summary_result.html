@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Summary Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="summary-container">
+    <h2 class="summary-title">Summary Result</h2>
+
+    <div class="summary-columns">
+      <!-- Left: Original Text -->
+      <div class="summary-left">
+        <div class="summary-card">
+          <h4 class="section-heading">Original Text</h4>
+          <div class="text-block scrollable-box">{{ original }}</div>
+        </div>
+      </div>
+
+      <!-- Right: Generated Summary -->
+      <div class="summary-right">
+        <div class="summary-card">
+          <h4 class="section-heading">Generated Summary</h4>
+          <div class="summary-block scrollable-box">{{ summary }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-footer">
+      <a href="{{ url_for('dashboard') }}" class="btn btn-outline">← Back to Dashboard</a>
+    </div>
+  </div>
+</body>
+</html>
